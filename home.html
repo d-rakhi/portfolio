@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DONTHAGANI RAKESH - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after click
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-10 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">DONTHAGANI RAKESH</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="text-gray-600 hover:text-blue-500">Home</a></li>
+                <li><a href="#objective" class="text-gray-600 hover:text-blue-500">Objective</a></li>
+                <li><a href="#education" class="text-gray-600 hover:text-blue-500">Education</a></li>
+                <li><a href="#skills" class="text-gray-600 hover:text-blue-500">Skills</a></li>
+                <li><a href="#certifications" class="text-gray-600 hover:text-blue-500">Certifications</a></li>
+                <li><a href="#projects" class="text-gray-600 hover:text-blue-500">Projects</a></li>
+                <li><a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a></li>
+            </ul>
+            <!-- Hamburger Menu -->
+            <button id="menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <ul class="flex flex-col space-y-4 px-6 py-4">
+                <li><a href="#home" class="text-gray-600 hover:text-blue-500">Home</a></li>
+                <li><a href="#objective" class="text-gray-600 hover:text-blue-500">Objective</a></li>
+                <li><a href="#education" class="text-gray-600 hover:text-blue-500">Education</a></li>
+                <li><a href="#skills" class="text-gray-600 hover:text-blue-500">Skills</a></li>
+                <li><a href="#certifications" class="text-gray-600 hover:text-blue-500">Certifications</a></li>
+                <li><a href="#projects" class="text-gray-600 hover:text-blue-500">Projects</a></li>
+                <li><a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-600 text-white py-32 text-center mt-16">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-4">DONTHAGANI RAKESH</h1>
+            <p class="text-xl mb-2">+91 8688056358</p>
+            <p class="text-xl mb-2">donthaganirakesh03@gmail.com</p>
+            <p class="text-xl">S/o Donthagani Upender, H.no 1-13/a, Patharlapadu, Tirumalayapalem, Khammam, Telangana State, 507 183.</p>
+        </div>
+    </section>
+
+    <!-- Objective Section -->
+    <section id="objective" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Objective</h2>
+            <p class="text-gray-600">Under graduate specializing in design, quality assurance, and research methodologies. Skilled in technical analysis, project management, and regulatory compliance. Seeking opportunities in research, manufacturing, or technology sectors to contribute to innovation, process optimization, and real-world problem solving.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Education</h2>
+            <ul class="list-disc pl-6 space-y-4 text-gray-600">
+                <li><strong>Bachelor of Computer Applications</strong> (2023-2026)<br>At Sana group of pharmacy (approved by AICTE & PCI NEW DELHI)</li>
+                <li><strong>Intermediate (TSBIE) 10+2</strong> (2021-2023)<br>TSRJC ENKOOR</li>
+                <li><strong>CLASS 10TH</strong> (2020-2021)<br>NEW ERA HIGH SCHOOL, KHAMMAM (TS BSE)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Technical Skills</h2>
+            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Programming & Development: Proficient in languages such as Python, Java, C++, JavaScript</li>
+                <li>Software Development Lifecycle (SDLC): Agile, Scrum, DevOps practices</li>
+                <li>Web & Application Development: HTML, CSS, React, Node.js, REST APIs</li>
+                <li>Database Management: SQL, MySQL, MongoDB, PostgreSQL</li>
+                <li>Tools & Platforms: Git, GitHub, Docker, Jenkins, VS Code, Eclipse</li>
+                <li>Cloud & Infrastructure: AWS, Azure, Google Cloud Platform (GCP)</li>
+                <li>Data Structures & Algorithms: Strong problem-solving and analytical skills</li>
+                <li>Soft Skills: Effective communication, teamwork, leadership, and adaptability</li>
+                <li>Certifications & Industry Knowledge: Agile, AWS Certified Developer, Full-Stack Development, Cybersecurity Basics</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Certifications</h2>
+            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Certified in Web Development Technologies (Full stack Development)</li>
+                <li>Certified in Microsoft Tools & MS OFFICE</li>
+                <li>Certified in PHOTOSHOP</li>
+                <li>Certified in Agile Development</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Projects</h2>
+            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Developed personal Portfolio</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact</h2>
+            <p class="text-gray-600 mb-2">Phone: <a href="tel:+918688056358" class="text-blue-500 hover:underline">+91 8688056358</a></p>
+            <p class="text-gray-600 mb-2">Email: <a href="mailto:donthaganirakesh03@gmail.com" class="text-blue-500 hover:underline">donthaganirakesh03@gmail.com</a></p>
+            <p class="text-gray-600">Address: S/o Donthagani Upender, H.no 1-13/a, Patharlapadu, Tirumalayapalem, Khammam, Telangana State, 507 183.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4 text-center">
+        <p>&copy; 2025 DONTHAGANI RAKESH. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
