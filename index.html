@@ -3,140 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Donthagani Rakesh | BCA Student & Full-Stack Developer</title>
+  <title>Donthagani Rakesh | BCA | Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: #f4f7fa;
+      color: #1f2937;
+      background: #f8fafc;
+      font-size: 1.05rem;
     }
+
     header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 4rem 1rem 3rem;
       text-align: center;
-      padding: 5rem 1rem 4rem;
     }
+
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
       margin-bottom: 0.5rem;
     }
-    header p {
+
+    header .title {
       font-size: 1.3rem;
-      opacity: 0.9;
+      color: #4b5563;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
     }
-    .contact-info {
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
+
+    .contact-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 1.05rem;
     }
-    .contact-info a {
-      color: white;
+
+    .contact-bar a {
+      color: #2563eb;
       text-decoration: none;
-      margin: 0 1rem;
+      font-weight: 500;
     }
-    .contact-info a:hover {
+
+    .contact-bar a:hover {
       text-decoration: underline;
+      color: #1d4ed8;
     }
+
     nav {
-      background: #333;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
+
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       padding: 1rem 0;
+      gap: 0.5rem;
     }
+
     nav a {
-      color: white;
+      color: #374151;
       text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      font-weight: bold;
-      transition: background 0.3s;
+      padding: 0.75rem 1.4rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: all 0.2s ease;
     }
-    nav a:hover {
-      background: #555;
+
+    nav a:hover,
+    nav a.active {
+      background: #eff6ff;
+      color: #2563eb;
     }
+
     section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 4rem 1.5rem;
     }
+
     h2 {
-      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #111827;
       margin-bottom: 2rem;
-      color: #444;
-      position: relative;
+      text-align: center;
     }
-    h2::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: #667eea;
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+
     .about p {
-      max-width: 800px;
+      max-width: 780px;
       margin: 0 auto 1.5rem;
+      color: #4b5563;
       font-size: 1.1rem;
       text-align: center;
     }
-    .skills-container {
+
+    .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
-    .skill-category {
+
+    .card {
       background: white;
-      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1.6rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
-    .skill-category h3 {
+
+    .card h3 {
+      color: #1e40af;
+      font-size: 1.25rem;
       margin-bottom: 1rem;
-      color: #667eea;
+      font-weight: 600;
     }
-    .skill-category ul {
-      list-style: disc;
-      padding-left: 1.5rem;
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
     }
-    .education-item, .cert-item, .project-item {
+
+    .card li {
+      margin-bottom: 0.6rem;
+      color: #4b5563;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .card li::before {
+      content: "•";
+      color: #3b82f6;
+      position: absolute;
+      left: 0;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .timeline-item {
       background: white;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      border: 1px solid #e5e7eb;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 1.6rem;
+      margin-bottom: 1.5rem;
     }
+
+    .timeline-item h3 {
+      color: #111827;
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-item .period {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .timeline-item .institution {
+      color: #4b5563;
+      font-weight: 500;
+    }
+
     .project-item a {
-      color: #667eea;
-      font-weight: bold;
+      color: #2563eb;
+      font-weight: 500;
       text-decoration: none;
     }
+
     .project-item a:hover {
       text-decoration: underline;
     }
+
     footer {
-      background: #333;
-      color: white;
+      background: #f1f5f9;
+      color: #4b5563;
       text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+      padding: 2.5rem 1rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.95rem;
     }
+
     @media (max-width: 768px) {
-      header h1 { font-size: 2.4rem; }
-      nav ul { flex-direction: column; }
-      nav a { padding: 1rem; }
+      header h1 { font-size: 2.1rem; }
+      header .title { font-size: 1.15rem; }
+      nav ul { flex-direction: column; align-items: center; }
+      nav a { padding: 0.9rem 2rem; }
+      section { padding: 3rem 1.2rem; }
     }
   </style>
 </head>
@@ -144,9 +218,9 @@
 
   <header>
     <h1>Donthagani Rakesh</h1>
-    <p>BCA Student | Aspiring Full-Stack Developer & Software Engineer</p>
-    <div class="contact-info">
-      <a href="tel:+918688056358">+91 8688056358</a> • 
+    <div class="title">BCA Student | Aspiring Full-Stack Developer</div>
+    <div class="contact-bar">
+      <a href="tel:+918688056358">+91 86880 56358</a>
       <a href="mailto:donthaganirakesh03@gmail.com">donthaganirakesh03@gmail.com</a>
     </div>
   </header>
@@ -162,59 +236,48 @@
   </nav>
 
   <section id="about" class="about">
-    <h2>Objective</h2>
-    <p>Under Graduate specializing in design, quality assurance, and research methodologies. Skilled in technical analysis, project management, and regulatory compliance. Seeking opportunities in research, manufacturing, or technology sectors to contribute to innovation, process optimization, and real-world problem solving. Looking for career roles in IT, Software Development and Services.</p>
+    <h2>Professional Summary</h2>
+    <p>Motivated BCA undergraduate with strong foundation in full-stack development, software engineering principles, and modern web technologies. Passionate about building clean, scalable, and user-focused applications. Actively seeking entry-level/full-stack developer roles or internships where I can contribute to meaningful projects, continue learning, and grow within a collaborative team environment.</p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill-category">
-        <h3>Programming & Development</h3>
+    <h2>Technical Skills</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>Languages</h3>
         <ul>
-          <li>Proficient in Python, Java, C++, JavaScript</li>
+          <li>Python, Java, JavaScript, C++</li>
         </ul>
       </div>
-      <div class="skill-category">
-        <h3>Software Development Lifecycle (SDLC)</h3>
+      <div class="card">
+        <h3>Frontend</h3>
         <ul>
-          <li>Agile, Scrum, DevOps practices</li>
+          <li>HTML5, CSS3, React</li>
         </ul>
       </div>
-      <div class="skill-category">
-        <h3>Web & Application Development</h3>
+      <div class="card">
+        <h3>Backend & APIs</h3>
         <ul>
-          <li>HTML, CSS, React, Node.js, REST APIs</li>
+          <li>Node.js, RESTful APIs</li>
         </ul>
       </div>
-      <div class="skill-category">
-        <h3>Database Management</h3>
+      <div class="card">
+        <h3>Databases</h3>
         <ul>
-          <li>SQL, MySQL, MongoDB, PostgreSQL</li>
+          <li>MySQL, PostgreSQL, MongoDB</li>
         </ul>
       </div>
-      <div class="skill-category">
-        <h3>Tools & Platforms</h3>
+      <div class="card">
+        <h3>Tools & DevOps</h3>
         <ul>
-          <li>Git, GitHub, Docker, Jenkins, VS Code, Eclipse</li>
+          <li>Git, GitHub, Docker, VS Code</li>
+          <li>Jenkins, Agile / Scrum</li>
         </ul>
       </div>
-      <div class="skill-category">
-        <h3>Cloud & Infrastructure</h3>
+      <div class="card">
+        <h3>Cloud Platforms</h3>
         <ul>
-          <li>AWS, Azure, Google Cloud Platform (GCP)</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Data Structures & Algorithms</h3>
-        <ul>
-          <li>Strong problem-solving and analytical skills</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li>Effective communication, teamwork, leadership, adaptability</li>
+          <li>AWS (Developer – Associate track), Azure, GCP basics</li>
         </ul>
       </div>
     </div>
@@ -222,63 +285,72 @@
 
   <section id="education">
     <h2>Education</h2>
-    <div class="education-item">
+    <div class="timeline-item">
       <h3>Bachelor of Computer Applications (BCA)</h3>
-      <p>2023 – 2026</p>
-      <p>Priyadarshini Degree and PG College</p>
+      <span class="period">2023 – 2026 (Expected)</span>
+      <div class="institution">Priyadarshini Degree and PG College</div>
     </div>
-    <div class="education-item">
-      <h3>Intermediate (TSBIE) 10+2</h3>
-      <p>2021 – 2023</p>
-      <p>TSRJC Enkoor</p>
+    <div class="timeline-item">
+      <h3>Intermediate (TSBIE)</h3>
+      <span class="period">2021 – 2023</span>
+      <div class="institution">TSRJC Enkoor</div>
     </div>
-    <div class="education-item">
-      <h3>Class 10th</h3>
-      <p>2020 – 2021</p>
-      <p>New Era High School</p>
+    <div class="timeline-item">
+      <h3>SSC (Class X)</h3>
+      <span class="period">2020 – 2021</span>
+      <div class="institution">New Era High School</div>
     </div>
   </section>
 
   <section id="certifications">
     <h2>Certifications</h2>
-    <div class="cert-item">
+    <div class="card">
       <ul>
-        <li>Certified in Web Development Technologies (Full Stack Development)</li>
-        <li>Certified in Microsoft Tools & MS Office</li>
-        <li>Certified in Photoshop</li>
-        <li>Certified in Agile Development</li>
-        <li>AWS Certified Developer (mentioned in skills)</li>
-        <li>Cybersecurity Basics (mentioned in skills)</li>
+        <li>Full-Stack Web Development</li>
+        <li>AWS Certified Developer – Associate (in progress / completed)</li>
+        <li>Agile & Scrum Fundamentals</li>
+        <li>Microsoft Office Specialist</li>
+        <li>Introduction to Cybersecurity</li>
       </ul>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-item">
+    <div class="timeline-item project-item">
       <h3>Fee Management System</h3>
-      <p>A system to manage student fees, records, and payments efficiently (built with relevant tech stack).</p>
+      <p>Web application for educational institutions to manage student fee records, payment tracking, receipts, and admin dashboard. Built with secure authentication and responsive design.</p>
+      <p><strong>Tech:</strong> HTML, CSS, JavaScript, Node.js / Python backend, MySQL</p>
     </div>
-    <div class="project-item">
+    <div class="timeline-item project-item">
       <h3>Personal Portfolio Website</h3>
-      <p>Responsive personal portfolio showcasing skills, education, projects, and certifications.</p>
-      <p><a href="#top">You're currently viewing it! (Self-referential link)</a></p>
+      <p>Clean, responsive single-page portfolio highlighting education, skills, certifications, and projects.</p>
+      <p><strong>Tech:</strong> HTML, CSS, JavaScript (vanilla)</p>
+      <p><em>You're currently viewing this project.</em></p>
     </div>
   </section>
 
   <footer>
-    <p>Declaration: I hereby declare that all the information provided is true and accurate to the best of my knowledge.</p>
-    <p>&copy; 2026 Donthagani Rakesh. All rights reserved.</p>
+    <p>Declaration: I hereby declare that the information provided above is true to the best of my knowledge and belief.</p>
+    <p style="margin-top: 1rem;">© 2026 Donthagani Rakesh</p>
   </footer>
 
   <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+    // Optional: highlight active nav link (simple version)
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 200;
+        if (scrollY >= sectionTop) current = section.getAttribute("id");
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
       });
     });
   </script>
