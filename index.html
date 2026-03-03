@@ -1,156 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DONTHAGANI RAKESH - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu after click
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donthagani Rakesh | BCA Student & Full-Stack Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f4f7fa;
+    }
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem 4rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+    .contact-info {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+    }
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    nav {
+      background: #333;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #555;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #444;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #667eea;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .about p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-category {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .skill-category h3 {
+      margin-bottom: 1rem;
+      color: #667eea;
+    }
+    .skill-category ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+    .education-item, .cert-item, .project-item {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .project-item a {
+      color: #667eea;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .project-item a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.4rem; }
+      nav ul { flex-direction: column; }
+      nav a { padding: 1rem; }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body>
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-lg fixed w-full z-10 top-0">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-800">DONTHAGANI RAKESH</h1>
-            <ul class="hidden md:flex space-x-6">
-                <li><a href="#home" class="text-gray-600 hover:text-blue-500">Home</a></li>
-                <li><a href="#objective" class="text-gray-600 hover:text-blue-500">Objective</a></li>
-                <li><a href="#education" class="text-gray-600 hover:text-blue-500">Education</a></li>
-                <li><a href="#skills" class="text-gray-600 hover:text-blue-500">Skills</a></li>
-                <li><a href="#certifications" class="text-gray-600 hover:text-blue-500">Certifications</a></li>
-                <li><a href="#projects" class="text-gray-600 hover:text-blue-500">Projects</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a></li>
-            </ul>
-            <!-- Hamburger Menu -->
-            <button id="menu-btn" class="md:hidden text-gray-600 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <ul class="flex flex-col space-y-4 px-6 py-4">
-                <li><a href="#home" class="text-gray-600 hover:text-blue-500">Home</a></li>
-                <li><a href="#objective" class="text-gray-600 hover:text-blue-500">Objective</a></li>
-                <li><a href="#education" class="text-gray-600 hover:text-blue-500">Education</a></li>
-                <li><a href="#skills" class="text-gray-600 hover:text-blue-500">Skills</a></li>
-                <li><a href="#certifications" class="text-gray-600 hover:text-blue-500">Certifications</a></li>
-                <li><a href="#projects" class="text-gray-600 hover:text-blue-500">Projects</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <header>
+    <h1>Donthagani Rakesh</h1>
+    <p>BCA Student | Aspiring Full-Stack Developer & Software Engineer</p>
+    <div class="contact-info">
+      <a href="tel:+918688056358">+91 8688056358</a> • 
+      <a href="mailto:donthaganirakesh03@gmail.com">donthaganirakesh03@gmail.com</a>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-blue-600 text-white py-32 text-center mt-16">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl font-bold mb-4">DONTHAGANI RAKESH</h1>
-            <p class="text-xl mb-2">+91 8688056358</p>
-            <p class="text-xl mb-2">donthaganirakesh03@gmail.com</p>
-            <p class="text-xl">S/o Donthagani Upender, H.no 1-13/a, Patharlapadu, Tirumalayapalem, Khammam, Telangana State, 507 183.</p>
-        </div>
-    </section>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
 
-    <!-- Objective Section -->
-    <section id="objective" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Objective</h2>
-            <p class="text-gray-600">Under graduate specializing in design, quality assurance, and research methodologies. Skilled in technical analysis, project management, and regulatory compliance. Seeking opportunities in research, manufacturing, or technology sectors to contribute to innovation, process optimization, and real-world problem solving.</p>
-        </div>
-    </section>
+  <section id="about" class="about">
+    <h2>Objective</h2>
+    <p>Under Graduate specializing in design, quality assurance, and research methodologies. Skilled in technical analysis, project management, and regulatory compliance. Seeking opportunities in research, manufacturing, or technology sectors to contribute to innovation, process optimization, and real-world problem solving. Looking for career roles in IT, Software Development and Services.</p>
+  </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-16 bg-gray-200">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Education</h2>
-            <ul class="list-disc pl-6 space-y-4 text-gray-600">
-                <li><strong>Bachelor of Computer Applications</strong> (2023-2026)<br>At PRIYADHARSHINI DEGREE AND PG COLLEGE</li>
-                <li><strong>Intermediate (TSBIE) 10+2</strong> (2021-2023)<br>TSRJC ENKOOR</li>
-                <li><strong>CLASS 10TH</strong> (2020-2021)<br>NEW ERA HIGH SCHOOL, KHAMMAM (TS BSE)</li>
-            </ul>
-        </div>
-    </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Programming & Development</h3>
+        <ul>
+          <li>Proficient in Python, Java, C++, JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Software Development Lifecycle (SDLC)</h3>
+        <ul>
+          <li>Agile, Scrum, DevOps practices</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Web & Application Development</h3>
+        <ul>
+          <li>HTML, CSS, React, Node.js, REST APIs</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Database Management</h3>
+        <ul>
+          <li>SQL, MySQL, MongoDB, PostgreSQL</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Tools & Platforms</h3>
+        <ul>
+          <li>Git, GitHub, Docker, Jenkins, VS Code, Eclipse</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Cloud & Infrastructure</h3>
+        <ul>
+          <li>AWS, Azure, Google Cloud Platform (GCP)</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Data Structures & Algorithms</h3>
+        <ul>
+          <li>Strong problem-solving and analytical skills</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Effective communication, teamwork, leadership, adaptability</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Technical Skills</h2>
-            <ul class="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Programming & Development: Proficient in languages such as Python, Java, C++, JavaScript</li>
-                <li>Software Development Lifecycle (SDLC): Agile, Scrum, DevOps practices</li>
-                <li>Web & Application Development: HTML, CSS, React, Node.js, REST APIs</li>
-                <li>Database Management: SQL, MySQL, MongoDB, PostgreSQL</li>
-                <li>Tools & Platforms: Git, GitHub, Docker, Jenkins, VS Code, Eclipse</li>
-                <li>Cloud & Infrastructure: AWS, Azure, Google Cloud Platform (GCP)</li>
-                <li>Data Structures & Algorithms: Strong problem-solving and analytical skills</li>
-                <li>Soft Skills: Effective communication, teamwork, leadership, and adaptability</li>
-                <li>Certifications & Industry Knowledge: Agile, AWS Certified Developer, Full-Stack Development, Cybersecurity Basics</li>
-            </ul>
-        </div>
-    </section>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>Bachelor of Computer Applications (BCA)</h3>
+      <p>2023 – 2026</p>
+      <p>Priyadarshini Degree and PG College</p>
+    </div>
+    <div class="education-item">
+      <h3>Intermediate (TSBIE) 10+2</h3>
+      <p>2021 – 2023</p>
+      <p>TSRJC Enkoor</p>
+    </div>
+    <div class="education-item">
+      <h3>Class 10th</h3>
+      <p>2020 – 2021</p>
+      <p>New Era High School</p>
+    </div>
+  </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-16 bg-gray-200">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Certifications</h2>
-            <ul class="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Certified in Web Development Technologies (Full stack Development)</li>
-                <li>Certified in Microsoft Tools & MS OFFICE</li>
-                <li>Certified in PHOTOSHOP</li>
-                <li>Certified in Agile Development</li>
-            </ul>
-        </div>
-    </section>
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-item">
+      <ul>
+        <li>Certified in Web Development Technologies (Full Stack Development)</li>
+        <li>Certified in Microsoft Tools & MS Office</li>
+        <li>Certified in Photoshop</li>
+        <li>Certified in Agile Development</li>
+        <li>AWS Certified Developer (mentioned in skills)</li>
+        <li>Cybersecurity Basics (mentioned in skills)</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Projects</h2>
-            <ul class="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Developed personal Portfolio</li>
-            </ul>
-        </div>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-item">
+      <h3>Fee Management System</h3>
+      <p>A system to manage student fees, records, and payments efficiently (built with relevant tech stack).</p>
+    </div>
+    <div class="project-item">
+      <h3>Personal Portfolio Website</h3>
+      <p>Responsive personal portfolio showcasing skills, education, projects, and certifications.</p>
+      <p><a href="#top">You're currently viewing it! (Self-referential link)</a></p>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-200">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact</h2>
-            <p class="text-gray-600 mb-2">Phone: <a href="tel:+918688056358" class="text-blue-500 hover:underline">+91 8688056358</a></p>
-            <p class="text-gray-600 mb-2">Email: <a href="mailto:donthaganirakesh03@gmail.com" class="text-blue-500 hover:underline">donthaganirakesh03@gmail.com</a></p>
-            <p class="text-gray-600">Address: S/o Donthagani Upender, H.no 1-13/a, Patharlapadu, Tirumalayapalem, Khammam, Telangana State, 507 183.</p>
-        </div>
-    </section>
+  <footer>
+    <p>Declaration: I hereby declare that all the information provided is true and accurate to the best of my knowledge.</p>
+    <p>&copy; 2026 Donthagani Rakesh. All rights reserved.</p>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-4 text-center">
-        <p>&copy; 2025 DONTHAGANI RAKESH. All rights reserved.</p>
-    </footer>
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 
 </body>
 </html>
-
